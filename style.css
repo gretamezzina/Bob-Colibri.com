@@ -19,10 +19,6 @@ html {
 	src: url('Playlist Script.otf');
 }
 
-main {
-    background: rgba(206, 218, 130, 0.1);
-}
-
 .offSetPage {
     margin-bottom: 60px;
 }
@@ -45,11 +41,15 @@ h2 {
     text-align:center;
 }
 
-p {
+p, .darkmode {
     font-family: 'Montserrat', sans-serif;
     font-size:20px;
     text-align:justify;
     hyphens:auto;
+}
+
+.darkmode{
+    color: black;
 }
 
 
@@ -80,10 +80,12 @@ a:hover, .homeButton:hover {
     color: white;
 }
 
-@media only screen and (min-width:1200px) {
+
+@media only screen and (min-width:800px) {
    
-    html {
-        margin : 10px 15% 0px 15%;
+
+   .offSetPage {
+        margin : 0px 150px;
     }
 
     h1 {
@@ -106,13 +108,17 @@ a:hover, .homeButton:hover {
 */
 /*Navbar*/
 .logo {
+    background-color: white
+    ;
     text-align: center;
 }
 .logo img {
     max-width: 100%;
-    height: auto;
+    height: 300px;
     width: auto;
     margin:auto;
+    object-fit: cover;
+    
   }
   
 nav {
@@ -131,7 +137,7 @@ nav {
     align-items: center;
     justify-content: space-evenly;
     background-color: rgba(114,217,228,0.9);
-    padding : 4px 0px;
+    padding : 0px 0px;
     height: 60px;  
  }
 
@@ -148,10 +154,11 @@ nav {
      width:30px;
      height: 30px;
  }
+
  
 
 
- @media only screen and (min-width:1200px) {
+ @media only screen and (min-width:800px) {
     
     header {
         align-items: center;
@@ -171,7 +178,6 @@ nav {
     nav ul {
         justify-content: space-around;   
         background-color: rgb(114,217,228); 
-        /*rgb(201,220,100)*/
     }
 
     nav li {
@@ -209,6 +215,7 @@ nav {
 /* Home Page */
 
 div#slider {
+    padding-top: 40px;
     width:100%;
     max-width:1917px;
     overflow:hidden;
@@ -250,13 +257,6 @@ div#slider figure img {
     width: 100%;
     box-shadow: 5px 2px 5px grey;
 }
-/* .carousel {
-    display:none;
-}
-
-.mobile {
-    width:100%;
-} */
 
 .nxtGal {
     margin: 10px 0px;
@@ -285,20 +285,44 @@ p
     margin: 20px 0px;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 800px) {
     .last2 {
         margin-bottom: 10px;
     }
-    /* .carousel {
-        display:block;
-    }
-    .mobile {
-        display:none;
-    } */
 
     .nxtGal {
         flex-direction: row;
     }
+
+/* darkmode */
+    :root {
+        --background-color: white;
+        --text-color: black;
+        /* to read: https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties */
+    }
+    
+    [data-theme="dark"] {
+        /* to read: https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-* */
+        /* and https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors */
+        --background-color: black;
+        --text-color: white;
+        z-index: 3;
+    }
+    
+    body {
+        background-color: var(--background-color);
+        color: var(--text-color);
+    }
+
+    .toggler{
+        label: label: '🌓';
+    }
+    
+
+
+
+
+
 }
 
 /*
@@ -321,7 +345,6 @@ p
 .column {
       margin: 10px;
       margin-top: -107px;
-     /* border: 1px solid black; */
 }
 
 .column img{
@@ -362,22 +385,12 @@ div .namesan {
    }
 
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 800px) {
 
     .galtit {
         margin-top: 0px;
     }
-    
-    main {
-       background: rgba(206, 218, 130, 0.1);
-}
 
-    /*
-    .galleryback {
-        
-        background: rgba(206, 218, 130, 0.1);
-       
-   }*/
    
    div .namesan {
     position: relative;
@@ -415,16 +428,6 @@ div .namesan {
 */
 
 /*.detailed img
-{
-    height: 150px;
-    width: 150px;
-    object-fit:scale-down ; 
-    object-position: center;    
-}
-
-.detailed img {
-    background-color: black;
-}*/
 
 /* Hover description for desktop versions */
 
@@ -623,7 +626,7 @@ div .namesan {
     box-shadow: 5px 2px 5px grey;
 }
 
-@media only screen and (min-width:1200px) { 
+@media only screen and (min-width:800px) { 
     .experience h2, .about h2, .tools h2{
         text-align: justify;   
     }
@@ -768,7 +771,7 @@ iframe {
     color:#C9E165;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 800px) {
 
 
 form {
@@ -942,70 +945,3 @@ footer img {
     font-weight: bold;
     font-style: normal;
 }
-
-
-
-
-/*footer {
-    display: flex;
-    background-color: #303030;
-    width: 100%;
-    height: 100px;
-    align-items: center;
-    margin-top: auto;
-}
-
-footer a {
-  color : #cfcfcf;
-  font-weight: bold;
-  text-decoration: none;
-  padding-top: 10px;
-}
-
-
-
-.externalLinks {
-    margin-left: auto;
-}
-*/
-/* footer
-    
-{
-    background-color: rgb(168, 156, 156);
-     color: white;
-     font-family: "Montserrat", "Open Sans" 
-
-    
-}
-
-.main-footer
-
-{
-    display: flex;
-    justify-content: space-around;
-    
-    
-}
-
-footer li 
-{
-    list-style: none;
-   
-
-}
-
-.icons
-{
-    display:flex;
-    flex-flow: column wrap;
-    align-items: flex-start;
-    
-}
-
-.bottom-footer
-{
-display: flex;
-align-items: center;
-justify-content: space-around;
-padding-bottom: 10px;
-} */
